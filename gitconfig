@@ -1,0 +1,7 @@
+[core]
+    editor = mvim
+[user]
+	name = Dougal Matthews
+	email = dougal85@gmail.com
+[alias]
+	lg = log --graph --decorate --pretty=oneline --abbrev-commit

@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/dougal/Desktop/lxml-2.3beta1'
+let g:netrw_dirhist_2='/Users/dougal/Django/Aviva/projects/oneaviva/gpp'
+let g:netrw_dirhist_3='/Users/dougal/Desktop/python_starter_package'
+let g:netrw_dirhist_4='/Users/dougal/Django/Aviva/projects/siteadmin'
