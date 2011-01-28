@@ -47,3 +47,18 @@ extract () {
     echo "'$1' is not a valid file"
   fi
 }
+
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
+
+# Prevent pip from doing anything unless you're inside an activated virtualenv.
+PIP=/usr/local/bin/pip
+function pip {
+    if [ "x$VIRTUAL_ENV" = 'x' ]; then
+        echo "No virtualenv activated; bailing."
+    else
+        $PIP -E `basename $VIRTUAL_ENV` "$@"
+    fi
+}
+
