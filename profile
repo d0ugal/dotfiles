@@ -61,4 +61,3 @@ function pip {
         $PIP -E `basename $VIRTUAL_ENV` "$@"
     fi
 }
-
