@@ -61,3 +61,28 @@ function pip {
         $PIP -E `basename $VIRTUAL_ENV` "$@"
     fi
 }
+
+browsesecure() {
+  python <<SWITCH
+import sys
+from subprocess import Popen, call, PIPE
+import time
+
+def switch_location(name):
+    call(['scselect', name], stdout=open('/dev/null', 'w'))
+    print "Switched to %s" % name
+
+switch_location('SOCK Proxied Public')
+time.sleep(5)
+
+print 'SOCKS Proxy on localhost:7890'
+
+try:
+    call(['ssh', '-ND', '7890', '184.106.137.18'])
+except:
+    pass
+finally:
+    switch_location("Automatic")
+SWITCH
+}
+
